@@ -19,7 +19,8 @@ Vue.component('menu-admin', require('./components/admin/MenuAdminComponent.vue')
 Vue.component('nuevo-contenido-inicio', require('./components/admin/NuevoContenidoInicioComponent.vue').default);
 Vue.component('actualizar-contenido-inicio', require('./components/admin/ActualizarContenidoInicioComponent.vue').default);
 Vue.component('mostrar-tabla-inicio', require('./components/admin/TablaActualizarEliminarComponent.vue').default);
-
+Vue.component('nuevo-servicio', require('./components/admin/NuevoServicioComponent.vue').default);
+Vue.component('nuevo-color-menu', require('./components/admin/NuevoColorMenuComponent.vue').default);
 
 
 

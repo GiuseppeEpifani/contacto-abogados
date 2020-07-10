@@ -24,6 +24,13 @@ Route::get('/mostrarTodosLosRegistros', 'ContenidoInicioController@showAll');
 Route::put('/updateInicioImages/{id}', 'ContenidoInicioController@updateContenidoInicio');
 Route::delete('/eliminarContenido/{id}', 'ContenidoInicioController@destroy');
 
+Route::post('/subirServicio', 'ServicioController@subirNuevoServicio');
+Route::get('/servicios', 'ServicioController@index');
+
+Route::get('/mostrarColorMenu','MenuController@index');
+Route::post('/NuevoColorMenu', 'MenuController@nuevoColorMenu');
+
+
 
 Route::get('/actualizarInformacionInicio/{id}', 'ContenidoInicioController@show');
 

@@ -13,7 +13,7 @@
       <tbody>
         <tr v-for="(item, index) in contenido" :key="index">
           <th scope="row" v-text="item.id" class="vertical-align"></th>
-          <td v-text="item.titulo" class="vertical-align text-suspencivo"></td>
+          <td v-text="item.titulo" class="vertical-align"></td>
           <td v-text="item.descripcion" class="vertical-align text-suspencivo"></td>
           <td class="vertical-align">
             <img :src="'images/'+item.foto" width="100px" height="100px" class="rounded-circle" />

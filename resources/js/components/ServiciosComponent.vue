@@ -1,8 +1,11 @@
 <template>
   <div>
     <h3 class="mt-5 mb-3 titulo-servicios titulos">¿Con que te ayudamos?</h3>
-    <div class="contenedor-servicios">
-      <div class="contenedor-servicios-opacity"></div>
+    <div
+      class="contenedor-servicios"
+      :style="{backgroundImage:'url(imagesServicios/'+servicios.fotoFondo+')' }"
+    >
+      <div class="contenedor-servicios-opacity" :style="{background:servicios.background }"></div>
       <div class="container pt-5 mb-5">
         <div class="row">
           <div class="col-sm-12 col-lg-4 mb-5">
@@ -57,6 +60,7 @@
               </div>
             </div>
           </div>
+
           <div class="col-sm-12 col-lg-4 mb-5">
             <div class="card sombra">
               <div class="row">
@@ -100,9 +104,7 @@
                 <div class="col-md-9">
                   <div class="card-body">
                     <h4 class="card-title mt-1">Tercerias</h4>
-                    <p
-                      class="card-text"
-                    >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text" v-text="servicios">.</p>
                   </div>
                 </div>
               </div>
@@ -115,7 +117,23 @@
 </template>
 
 <script>
-export default {};
+import { mapState } from "vuex";
+export default {
+  data() {
+    return {};
+  },
+  computed: {
+    ...mapState(["servicios"])
+  },
+  methods: {
+    getServicios() {
+      this.$store.commit("getServicios");
+    }
+  },
+  created() {
+    this.getServicios();
+  }
+};
 </script>
 
 
@@ -130,7 +148,6 @@ export default {};
     z-index: 30;
     width: 100%;
     position: absolute;
-    background: #d32c0b;
     opacity: 0.4;
     height: 100%;
   }
@@ -140,7 +157,6 @@ export default {};
   z-index: 30;
   width: 100%;
   position: absolute;
-  background: #d32c0b;
   opacity: 0.3;
   height: 100%;
 }
@@ -152,7 +168,6 @@ export default {};
   background-attachment: fixed;
   background-position: center center;
   background-size: cover;
-  background-image: url("/images/servicioFondo.jpg") !important;
   -webkit-box-shadow: 10px 10px 5px -4px rgba(0, 0, 0, 0.44);
   -moz-box-shadow: 10px 10px 5px -4px rgba(0, 0, 0, 0.44);
   box-shadow: 10px 10px 5px -4px rgba(0, 0, 0, 0.44);

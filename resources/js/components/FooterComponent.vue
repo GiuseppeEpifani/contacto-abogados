@@ -1,6 +1,7 @@
 <template>
   <div>
-     <div class="cotainer-fluid bg-dark" style=" border-top: 10px solid #D32C0B;">
+    <div :style="{background: menuColor.colorMenu}" style="height: 10px;"></div>
+    <div class="cotainer-fluid" :style="{background: menuColor.colorSubMenu}">
       <div class="container d-flex justify-content-center">
         <div class="d-flex flex-column mb-3 mt-3">
           <div>
@@ -34,7 +35,20 @@
 </template>
 
 <script>
-export default {};
+import { mapState } from "vuex";
+export default {
+  computed: {
+    ...mapState(["menuColor"])
+  },
+  methods: {
+    getColorMenu() {
+      this.$store.commit("getColorMenu");
+    }
+  },
+  created() {
+    this.getColorMenu();
+  }
+};
 </script>
 
 <style scoped>
